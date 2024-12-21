@@ -47,7 +47,9 @@ func init() {
 
 // LoadSignerVerifier creates a PluginClient with these InitOptions.
 func LoadSignerVerifier(ctx context.Context, inputKeyResourceID string, hashFunc crypto.Hash, opts ...signature.RPCOption) (kms.SignerVerifier, error) {
+	fmt.Printf("inputKeyResourceID: %s\n", inputKeyResourceID)
 	executable, keyResourceID, err := getPluginExecutableAndKeyResourceID(inputKeyResourceID)
+	fmt.Printf("executable: %s, keyResourceID: %s, err: %v\n", executable, keyResourceID, err)
 	if err != nil {
 		return nil, err
 	}

@@ -1,6 +1,8 @@
 module github.com/sigstore/sigstore/test/fuzz
 
-go 1.22.0
+go 1.22.8
+
+toolchain go1.23.0
 
 require (
 	github.com/AdaLogics/go-fuzz-headers v0.0.0-20211102141018-f7be0cbad29c

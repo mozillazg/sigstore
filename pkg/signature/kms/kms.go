@@ -69,7 +69,9 @@ func Get(ctx context.Context, keyResourceID string, hashFunc crypto.Hash, opts .
 			return sv, nil
 		}
 	}
+	fmt.Printf("No provider found for keyResourceID: %s\n", keyResourceID)
 	if pi, ok := providersMap[CLIPluginProviderKey]; ok {
+		fmt.Printf("Using plugin system as a provider for keyResourceID: %s\n", keyResourceID)
 		sv, err := pi(ctx, keyResourceID, hashFunc, opts...)
 		if err != nil {
 			return nil, err
